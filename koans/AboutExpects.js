@@ -1,41 +1,38 @@
-describe('Expects', function() {
+describe("About Expects", function() {
 
-  it('우리는 true를 원합니다.', function() {
-
-    // 여기서 시작입니다! false를 true로 바꿔보세요!
-    expect(false).toBeTruthy();
+  //We shall contemplate truth by testing reality, via spec expectations.
+  it("should expect true", function() {
+    expect(false).toBeTruthy(); //This should be true
   });
 
-  it('두개의 값이 같아야 합니다. #1', function() {
-    // FILL_ME_IN을 수정하세요.
+  //To understand reality, we must compare our expectations against reality.
+  it("should expect equality", function () {
     var expectedValue = FILL_ME_IN;
     var actualValue = 1 + 1;
 
-    // toBeTruthy()를 이용한 테스트
     expect(actualValue === expectedValue).toBeTruthy();
   });
 
-  it('두개의 값이 같아야 합니다. #2', function() {
-    // FILL_ME_IN을 수정하세요.
+  //Some ways of asserting equality are better than others.
+  it("should assert equality a better way", function () {
     var expectedValue = FILL_ME_IN;
     var actualValue = 1 + 1;
 
-  // toEqual()을 사용한 테스트
+  // toEqual() compares using common sense equality.
     expect(actualValue).toEqual(expectedValue);
   });
 
-  // type을 정확하게 사용해줘야 합니다.
-  it('두개의 값이 같아야 합니다. #3', function() {
-    // FILL_ME_IN을 수정하세요.
+  //Sometimes you need to be really exact about what you "type".
+  it("should assert equality with ===", function () {
     var expectedValue = FILL_ME_IN;
     var actualValue = (1 + 1).toString();
 
-    // toBe()는 ===를 이용한 테스트입니다.
+  // toBe() will always use === to compare.
     expect(actualValue).toBe(expectedValue);
   });
 
-  it('값을 올바르게 바꿔주어야 합니다.', function() {
-    // FILL_ME_IN을 수정하세요.
+  //Sometimes we will ask you to fill in the values.
+  it("should have filled in values", function () {
     expect(1 + 1).toEqual(FILL_ME_IN);
   });
 });

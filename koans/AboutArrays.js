@@ -1,9 +1,9 @@
-describe("Arrays", function() {
+describe("About Arrays", function() {
 
-  it("Array를 만듭니다.", function() {
-    // FILL_ME_IN을 수정해주세요!
+  //We shall contemplate truth by testing reality, via spec expectations.
+  it("should create arrays", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe(FILL_ME_IN);
+    expect(typeof(emptyArray)).toBe(FILL_ME_IN); //A mistake? - http://javascript.crockford.com/remedial.html
     expect(emptyArray.length).toBe(FILL_ME_IN);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
@@ -15,8 +15,7 @@ describe("Arrays", function() {
     expect(multiTypeArray[5][0]).toBe(FILL_ME_IN);
   });
 
-  it("Array Literals로 만들기", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should understand array literals", function () {
     var array = [];
     expect(array).toEqual([]);
 
@@ -30,8 +29,7 @@ describe("Arrays", function() {
     expect(array).toEqual(FILL_ME_IN);
   });
 
-  it("Array의 length", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should understand array length", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
     expect(fourNumberArray.length).toBe(FILL_ME_IN);
@@ -45,8 +43,7 @@ describe("Arrays", function() {
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
   });
 
-  it("Array의 slice", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
 
     expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
@@ -58,32 +55,25 @@ describe("Arrays", function() {
     expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
   });
 
-  it("Array의 reference", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should know array references", function () {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
         refArray[1] = "changed in function";
     }
-
-    // 이 부분을 놓치지 마시고 잘 보세요!
     passedByReference(array);
-
     expect(array[1]).toBe(FILL_ME_IN);
 
-    // 이 부분을 놓치지 마시고 잘 보세요!
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
     expect(array[5]).toBe(FILL_ME_IN);
 
-    // 이 부분을 놓치지 마시고 잘 보세요!
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
     expect(array[3]).toBe(FILL_ME_IN);
   });
 
-  it("push와 pop", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should push and pop", function () {
     var array = [1, 2];
     array.push(3);
 
@@ -94,8 +84,7 @@ describe("Arrays", function() {
     expect(array).toEqual(FILL_ME_IN);
   });
 
-  it("shift와 unshift", function () {
-    // FILL_ME_IN을 수정해주세요!
+  it("should know about shifting arrays", function () {
     var array = [1, 2];
 
     array.unshift(3);

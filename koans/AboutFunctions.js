@@ -1,7 +1,6 @@
-describe("Functions", function() {
-  // 지금까지 해온 것처럼 코드를 잘 보시고 FILL_ME_IN을 쭈욱 수정하시면 됩니다!
+describe("About Functions", function() {
 
-  it("function declaration", function() {
+  it("should declare functions", function() {
 
     function add(a, b) {
       return a + b;
@@ -10,7 +9,7 @@ describe("Functions", function() {
     expect(add(1, 2)).toBe(FILL_ME_IN);
   });
 
-  it("function 내부의 variable은 외부의 variable을 덮어씌운다는 것을 아셔야 합니다.", function () {
+  it("should know internal variables override outer variables", function () {
     var message = "Outer";
 
     function getMessage() {
@@ -27,24 +26,36 @@ describe("Functions", function() {
     expect(message).toBe(FILL_ME_IN);
   });
 
-  it("Scope에 대한 퀴즈입니다.", function () {
+  it("should have lexical scoping", function () {
     var variable = "top-level";
-
     function parentfunction() {
-      var variable = "local";
-
+        var variable = "local";
       function childfunction() {
-        return variable;
+          return variable;
       }
-
       return childfunction();
     }
-
-    // parentfunction을 실행시키면 뭐가 나올까요?
     expect(parentfunction()).toBe(FILL_ME_IN);
   });
 
-  it("함수 인자 이해하기", function () {
+  it("should use lexical scoping to synthesise functions", function () {
+
+    function makeMysteryFunction(makerValue)
+    {
+      var newFunction = function doMysteriousThing(param)
+      {
+        return makerValue + param;
+      };
+      return newFunction;
+    }
+
+    var mysteryFunction3 = makeMysteryFunction(3);
+    var mysteryFunction5 = makeMysteryFunction(5);
+
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
+  });
+
+  it("should allow extra function arguments", function () {
 
     function returnFirstArg(firstArg) {
       return firstArg;
@@ -69,7 +80,7 @@ describe("Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
-  it("함수 사용하기", function () {
+  it("should pass functions as values", function () {
 
     var appendRules = function (name) {
       return name + " rules!";
@@ -85,5 +96,16 @@ describe("Functions", function() {
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
 
+  });
+
+  it("should use function body as a string", function () {
+    var add = new Function("a", "b", "return a + b;");
+    expect(add(1, 2)).toBe(FILL_ME_IN);
+
+    var multiply = function (a, b) {
+      //An internal comment
+      return a * b;
+    };
+    expect(multiply.toString()).toBe(FILL_ME_IN);
   });
 });
